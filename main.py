@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 PORT = 3000
 
-
 @app.route('/calculate', methods=['POST'])
 def calculate():
     data = request.get_json()
