@@ -17,14 +17,14 @@ def calculate_sum():
     if not isinstance(data, dict):
         return jsonify({'error': 'Ожидается JSON-объект с числовыми значениями'}), 400
 
-    total = 0
+    sum = 0
 
     for key, value in data.items():
         if not isinstance(value, (int, float)):
             return jsonify({'error': f'Значение "{key}" не является числом'}), 400
-        total += value
+        sum += value
 
-    return jsonify({'sum': total})
+    return jsonify({'result': sum})
 
 if __name__ == '__main__':
     app.run(host='localhost', port=PORT, debug=True)
